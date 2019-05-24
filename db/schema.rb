@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 2019_05_24_005617) do
   create_table "cidades", force: :cascade do |t|
     t.string "codigo_ibge"
     t.string "nome"
-    t.string "estado"
-    t.string "belongs_to"
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "estado_id"
   end
 
   create_table "enderecos", force: :cascade do |t|

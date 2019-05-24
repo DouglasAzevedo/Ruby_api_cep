@@ -3,7 +3,7 @@ class CreateCidades < ActiveRecord::Migration[5.2]
     create_table :cidades do |t|
       t.string :codigo_ibge
       t.string :nome
-      t.belongs_to :cidade, foreign_key: true
+      t.belongs_to :estado, foreign_key: true
 
       t.timestamps
     end

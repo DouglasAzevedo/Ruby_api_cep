@@ -6,7 +6,7 @@ class BuscaCepController < ApplicationController
         @cep = cep_params[:cep]
         url = "https://viacep.com.br/ws/#{@cep}/json/"
 
-        retorno = JSON.parse(NET::HTTP.get(URI(url)))
+        retorno = JSON.parse(Net::HTTP.get(URI(url)))
 
         if retorno["erro"]
             render json: {erro: "CEP nao existe"}, status: :ok
@@ -33,10 +33,7 @@ class BuscaCepController < ApplicationController
 
     rescue JSON::ParserError => exception
         render json: {erro: "O Cep é invalido"}, status: :ok
-    
-    rescue => exception
-        render json: {erro: "Ligar no suporte"}, status: :ok
-        debugger    
+            
     end
 
     private
