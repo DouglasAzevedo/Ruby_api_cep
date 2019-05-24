@@ -36,7 +36,7 @@ class BuscaCepController < ApplicationController
     
     rescue => exception
         render json: {erro: "Ligar no suporte"}, status: :ok
-
+        debugger    
     end
 
     private
